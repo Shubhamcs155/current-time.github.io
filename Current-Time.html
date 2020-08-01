@@ -15,7 +15,7 @@ function start() {
     seconds=((seconds < 10) ? "0" : "") + seconds
     var milliseconds = time.getMilliseconds();
     milliseconds=((milliseconds < 10) ? "00" : "") + milliseconds;
-    
+    milliseconds=(((milliseconds > 9) && (milliseconds < 100)) ? "0" : "") + milliseconds;
     var clock = hours + ":" + minutes + ":" + seconds + ":" + milliseconds; 
     document.getElementById('pa').innerHTML = clock
     timer = setTimeout("start()",1);
@@ -28,6 +28,8 @@ function stopwatch() {
     var seconds = time.getSeconds()
     seconds=((seconds < 10) ? "0" : "") + seconds
     var milliseconds = time.getMilliseconds();
+    milliseconds=((milliseconds < 10) ? "00" : "") + milliseconds;
+    milliseconds=(((milliseconds > 9) && (milliseconds < 100)) ? "0" : "") + milliseconds;
     var clock = hours + ":" + minutes + ":" + seconds + ":" + milliseconds; 
     document.getElementById('pc').innerHTML = clock + "</br>";
     }    
